@@ -10,8 +10,10 @@
         body {background-color: rgb(238, 227, 227);}
         h1   {color: blueviolet;}
         p    {color: red;}
-        .btn {
-            width: 60%;
+        button.truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         }
         h3   {color: yellowgreen}
         a    {color: limegreen}
@@ -30,7 +32,7 @@
             <div class="jumbotron text-center">
                 <h1>Mission to Mars</h1>
                 <!-- Add a button to activate scraping script -->
-                <p><a class="btn btn-primary btn-lg active" href="/scrape" role="button">Scrape New Data</a></p>
+                <p><a class="btn btn-primary btn-lg active" href="/scrape" role="button">Click here to Scrape New Data</a></p>
             </div>
             <!-- Add section for Mars News -->
             <div class="row" id="mars-news">
