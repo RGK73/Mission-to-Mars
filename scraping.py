@@ -5,7 +5,6 @@ import pandas as pd
 import datetime as dt
 from webdriver_manager.chrome import ChromeDriverManager
 
-
 def scrape_all():
     # Initiate headless driver for deployment
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -19,13 +18,13 @@ def scrape_all():
         "news_paragraph": news_paragraph,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
+        "hemispheres": hemispheres(browser),
         "last_modified": dt.datetime.now()
     }
 
     # Stop webdriver and return data
     browser.quit()
     return data
-
 
 def mars_news(browser):
 
@@ -53,7 +52,6 @@ def mars_news(browser):
         return None, None
 
     return news_title, news_p
-
 
 def featured_image(browser):
     # Visit URL
@@ -96,6 +94,38 @@ def mars_facts():
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html(classes="table table-striped")
+
+def hemispheres(browser):
+    url='https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+
+    hemisphere_image_urls = []
+
+    for i in range(4):
+          
+        hemisphere = {}
+        # Find elements going to click link 
+        browser.find_by_css("a.product-item h3")[i].click()
+
+        # Try to get href and text except if error.
+        try:
+            # Next, we find the Sample image anchor tag and extract the href
+            sample_elem = browser.find_link_by_text('Sample').first
+            hemisphere['img_url'] = sample_elem['href']
+            # Get Hemisphere title
+            hemisphere['title'] = browser.find_by_css("h2.title").text
+        except AttributeError:
+
+            # Image error returns None for better front-end handling
+            hemisphere['title'] = None
+            sample_elem = None
+
+        # Append hemisphere object to list
+        hemisphere_image_urls.append(hemisphere)
+        # Go Back
+        browser.back()
+
+    return hemisphere_image_urls
 
 if __name__ == "__main__":
 
