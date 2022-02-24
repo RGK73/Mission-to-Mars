@@ -10,7 +10,7 @@ Have full-resolution images of the hemispheres are added to the dictionary.
 Titles for the hemisphere images are added to the dictionary.
 Create a list containing the dictionary of the full-resolution image URL string and title for each hemisphere image.
 
-![alt_text]("")
+![alt_text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/urls.png")
 
 ### Step 2 creating the HTML and creating a function to scrape the images with the scraping.py file:
 Create a scraping.py file contains code that retrieves the full-resolution image URL and title for each hemisphere image.
