@@ -12,23 +12,23 @@ Then full-resolution images of the hemispheres are added to the dictionary.
 Titles for the hemisphere images are added to the dictionary.
 Created a list containing the dictionary of the full-resolution image URL string and title for each hemisphere image as shown below:
 
-![alt text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/urls.png")
+![alt text](Images/urls.png)
 
 ### Step 2 Update the Web App with Mars’s Hemisphere Images and Titles:
 
 Using Python and HTML skills, I have added the code created in Deliverable 1 to "scraping.py" file,and updated Mongo database "mars_app", and modified "index.html" file so the webpage contains all the information collected in this module as well as the full-resolution images and titles for each hemisphere image as shown below:
 
-![alt text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/hem_1_2.png")
+![alt text](Images/hem_1_2.png)
 
-![alt text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/hem_3_4.png")
+![alt text](Images/hem_3_4.png)
 
-![alt text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/mongodb_object.png")
+![alt text](Images/mongodb_object.png)
 
 Finally, made the webpage mobile-responsive by adding Bootstrap 3 components to style the webpage as shown below:
 
-![alt text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/mobile_responsive.png")
+![alt text](Images/mobile_responsive.png)
 
-![alt text]("https://github.com/RGK73/Mission-to-Mars/blob/main/Images/bootstrap3_components.png")
+![alt text](Images/bootstrap3_components.png)
 
 
 
